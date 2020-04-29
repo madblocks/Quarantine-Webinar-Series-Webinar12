@@ -1,0 +1,151 @@
+The pre-requisites are as follows:
+
+1. gcc compiler -> codeblocks
+2. command prompt -> execute all the programs
+3. notepad -> to edit programs
+
+*and& are like inversly relate
+*&=1
+p=&a;
+*p= *&a=a
+the value which is stored in that addresss....
+p - address of another variable
+*p - value which is been stored in that addreess
+
+a=30
+*p, **q
+p=&a;
+q=&p;
+
+**q = **&p = *p = *&a = a
+
+**q is nothing but a
+
+int a=2; // 4 -bytes, &a - first byte address will be returned
+int *p=&a;
+let us assume that &a is 1000 (1000 - 1003)
+p is 1000
+
+p+1 = p+(1*sizeof(int)) = 1000 +(1*4)=1004
+p-1 = p-(1*sizeof(int))= 1000-4=996
+
+char a='w'; // 1 byte - 1 block - 1000
+char *p=&a;
+
+p+1 = p+(1*sizeof(char)) = 1000 + (1*1) = 1001
+
+p+4 = p+(4*sizeof(char))
+
+pointer increment and pointer decrement
+
+pointer increment
+
+*p++
+++*p
+*++p
+(*p)++
+
+Group1
+*p++ - placed for p - p will be incremented - (p+1) - 1004
+*++p - placed for p
+
+Group2- where ++ operator is placed
+(*p)++ - placed for *p - *p will be incremented - (*p+1)  - 31
+++*p - placed for *p
+
+int a=30; // &a-1000
+int *p=&a;
+int *q;
+
+*q=*p++; // what is after equalto symbol (++, variable)
+               // variable -> Assignment will be done first, later increment
+
+*q is 30
+*p is garbage value
+
+
+*p is assigned to *q -> *q=30
+*p++ so the value of p will be incrementd by 1 -> p will become 1004
+*1004 = garbage value
+*1000 = 30
+
+int a=30;
+int *p=&a;
+int *q;
+
+
+*q=*++p; // what is after equal to (++, variable) now it is ++
+               increment first, assign later
+
+*++p -> ++ is for p -> p + 1 = 1004
+*1004 - garbage value
+
+*p is garbage value
+*q is garbage value
+
+
+int a=30;
+int *p=&a;
+int *q;
+
+*q=(*p)++; // what is after equal to (++, var)
+                 // if it is var, assign first increment later
+
+*p is assigned to *q -> *q=30
+*p will be incremented by 1 -> *p = 31, a=31, *q=30
+
+int a=30;
+int *p=&a;
+int *q;
+
+*q=++*p; // what is after equal to, there is ++
+               // increment first, assign second
+
+*p will be incremented by 1 -> *p = 31, a=31
+*p is assigned to *q -> *q=31
+    
+
+int a=30;
+int *p=&a;
+
+Case - 1:
+Normal pointer variable is pointing a constant integer
+const int a=30; // constant integer variable
+int *p=&a; // normal pointer variable 
+int b=10;
+
+*p=b; // invalid statement
+ p=&b; // valid statement
+
+Case - 2:
+Constant integer pointer is pointing normal integer variable
+int a=30; 
+const int *p=&a;
+int b=10;
+
+*p=b; // valid statement
+p=&b; // invalid statement
+
+Case - 3:
+Constant integer pointer is pointing constant integer variable
+const int a=30;
+const int *p=&a;
+int b=10;
+
+*p=b; // invalid statement
+p=&b; // invalid statement
+
+int *p=NULL;
+
+int *p; - garbage location
+
+
+
+
+
+
+
+
+
+
+
